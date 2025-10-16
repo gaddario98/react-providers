@@ -4,12 +4,13 @@ import { PropsWithChildren } from "react";
 import { Provider, createStore } from "jotai";
 const store = createStore();
 
+const helmetContext = {};
 export const AppProviders: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-      <Provider store={store}>
-        <HelmetProvider>
-          <CustomQueryClientProvider>{children}</CustomQueryClientProvider>
-        </HelmetProvider>
-      </Provider>
+    <Provider store={store}>
+      <HelmetProvider context={helmetContext}>
+        <CustomQueryClientProvider>{children}</CustomQueryClientProvider>
+      </HelmetProvider>
+    </Provider>
   );
 };

@@ -1,6 +1,6 @@
 {
   "name": "@gaddario98/react-providers",
-  "version": "1.0.15",
+  "version": "1.0.18",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -30,7 +30,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@gaddario98/react-state": "^1.0.13",
+    "@gaddario98/react-state": "^1.0.15",
     "@tanstack/query-async-storage-persister": "^5.90.2",
     "@tanstack/react-query-persist-client": "^5.90.2"
   },
