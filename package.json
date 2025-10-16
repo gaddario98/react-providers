@@ -1,52 +1,67 @@
 {
   "name": "@gaddario98/react-providers",
-  "version": "1.0.12",
-  "main": "dist/index.mjs",
-  "module": "dist/index.mjs",
+  "version": "1.0.15",
   "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
+    "@tanstack/query-async-storage-persister": "^5.90.2",
+    "@tanstack/react-query": "^5.90.2",
     "@tanstack/react-query-persist-client": "^5.90.2",
     "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
     "@types/rollup-plugin-peer-deps-external": "^2",
     "babel-plugin-react-compiler": "1",
+    "jotai": "^2.15.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react-helmet-async": "^2.0.5",
     "rollup": "^4.40.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "typescript": "^5.8.3"
   },
-  "peerDependencies": {
-    "@gaddario98/react-state": "10.0.10",
+  "dependencies": {
+    "@gaddario98/react-state": "^1.0.13",
     "@tanstack/query-async-storage-persister": "^5.90.2",
-    "@tanstack/react-query": "^5.90.2",
-    "@tanstack/react-query-persist-client": "^5.90.2",
-    "jotai": "^2.15.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-helmet-async": "^2.0.5"
+    "@tanstack/react-query-persist-client": "^5.90.2"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": ">=5.0.0",
+    "jotai": ">=2.0.0",
+    "react": ">=18.0.0 <20.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-helmet-async": {
+      "optional": true
+    }
   },
   "files": [
-    "dist"
+    "dist",
+    "AppProviders.tsx",
+    "config.ts",
+    "CustomQueryClientProvider.tsx",
+    "index.ts"
   ],
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaddario98/react-providers"
+    "url": "git+https://github.com/gaddario98/react-providers"
   },
   "keywords": [
     "react-native",
